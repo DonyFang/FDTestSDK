@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/DonyFang/TestPodSpec.git'
+
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'TestSDK_Example' do
+  pod 'TestSDK', :path => '../'
+  pod 'AFNetworking' #需要用到的依赖库
+  target 'TestSDK_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
